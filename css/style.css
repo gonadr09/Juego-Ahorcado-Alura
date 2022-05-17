@@ -170,7 +170,11 @@ main{
 }
 
 #fake-input{
-    visibility: hidden;
+    border: none;
+    outline: none;
+    resize: none;
+    background-color: transparent;
+    color: transparent;
 }
 
 /* NEW WORD */
