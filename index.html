@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Bubblegum+Sans&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/0a525ee5a7.js"></script>
+    <title>Juego Ahorcado | Alura Challanges - Oracle ONE</title>
+</head>
+<body>
+    <header>
+        <img src="img/logo.svg" alt="logo-alura">
+    </header>
+
+    <main>
+
+        <section id="begin-section" class="flex-col-center">
+            <button id="play-game" class="button blue">Iniciar juego</button>
+            <button id="add-new-word" class="button grey">Agregar nueva palabra</button>
+        </section>
+
+        <section id="new-word-section" class="flex-col-space">
+            <input id="new-word-input" type="text" placeholder="Escribe una palabra ...">
+            <div id="warning-box">
+                <img src="img/exclamation-circle.svg" alt="exclamation-image">
+                <p id="warning-text">Máx. de 8 letras</p>
+            </div>
+            <div id="new-word-buttons-box">
+                <button id="new-word-save" class="button blue">Guardar y empezar</button>
+                <button id="new-word-cancel" class="button grey">Cancelar</button>
+            </div>
+        </section>
+
+        <section id="game-section" class="flex-col-center">
+            <div id="final-msg-box" class="flex-col-center"></div>
+            <div id="secret-word-box" class="flex-col-center"></div>
+            <div id="hanged-box"><img id="hanged-img" src="img/0.png" alt="hanged-game"></div>
+            <div id="right-words-box" class="flex-col-center"></div>
+            <div id="wrong-words-box" class="flex-col-center">&nbsp</div>
+            <div id="game-buttons-box">
+                <button id="new-game" class="button blue">Nuevo juego</button>
+                <button id="desist" class="button grey">Desistir</button>
+                <button id="open-keyboard" class="button grey">Abrir teclado 📱</button>
+            </div>
+            <input id="fake-input" type="text">
+        </section>
+
+    </main>
+
+    <footer class="flex-col-center">
+        <p>Challange Alura - Oracle ONE | Realizado por Gonzalo Díaz Rusconi</p>
+        <ul>
+            <li><a href="https://es-la.facebook.com/" target="_blank"><i class="fab fa-facebook-square"></i></a></li>
+            <li><a href="https://www.instagram.com/gonaa09/?hl=es-la" target="_blank"><i class="fab fa-instagram"></i></a></li>
+            <li><a href="https://github.com/gonadr09" target="_blank"><i class="fab fa-github"></i></a></li>
+            <li><a href="https://www.linkedin.com/in/gonzalo-d%C3%ADaz-rusconi-9519bba2/" target="_blank"><i class="fab fa-linkedin"></i></a></li>
+        </ul> 
+    </footer>
+
+    <script src="js/words-list.js"></script>
+    <script src="js/new-word.js"></script>
+    <script src="js/game.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>

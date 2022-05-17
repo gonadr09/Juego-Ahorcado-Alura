@@ -1,0 +1,21 @@
+let wordsList = [
+    "MANZANA",
+    "BANANA",
+    "SILLA",
+    "MESA",
+    "COMPUTADORA",
+    "TELEVISOR",
+    "CASA",
+    "EDIFICIO",
+    "CALLE",
+    "RUTA",
+    "ARBOL",
+    "FLOR",
+    "VACA",
+    "GALLINA",
+    "TIBURON",
+    "PEZ",
+    "PAJARO",
+    "LEON",
+];
+
