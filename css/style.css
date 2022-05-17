@@ -173,8 +173,8 @@ main{
     border: none;
     outline: none;
     resize: none;
-    background-color: transparent;
-    color: transparent;
+/*     background-color: transparent;
+    color: transparent; */
 }
 
 /* NEW WORD */
