@@ -55,7 +55,6 @@ function createBoardGame(){
 
     underscores = document.querySelectorAll(".underscore")
 
-    console.log("board game created");
     console.log(keyWord)
 
     // escuchadores de teclas
