@@ -89,6 +89,7 @@ header{
 
 main{
     height: 80%;
+    z-index: 1;
 }
 
 #begin-section{
@@ -283,8 +284,9 @@ footer li a:active {
 }
 
 .footer-phone{
-    display: 72px;
-    margin-top: 10px;
+    height: 15%;
+    margin-top: 15px;
+    display: none;
 }
 
 @media (max-height: 700px){   
@@ -321,5 +323,14 @@ footer li a:active {
 
     #game-section{
         height: 100%;
+    }
+}
+
+@media (max-height: 390px){     
+    main{
+        height: 300vh;
+    }
+    footer{
+        display: none;
     }
 }
