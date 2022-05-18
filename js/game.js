@@ -47,7 +47,7 @@ function createBoardGame(){
 
     openKeyboard.addEventListener("click", () => fakeInput.focus())
 
-    fakeInput.addEventListener("textInput", checkKeyFromPhone)
+    fakeInput.addEventListener("input", checkKeyFromPhone)
 
     window.addEventListener("keydown", checkKeyfromPC);        
 }
