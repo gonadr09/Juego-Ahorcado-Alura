@@ -52,23 +52,28 @@ function createBoardGame(){
     window.addEventListener("keydown", checkKeyfromPC);        
 }
 
-function checkKeyFromPhone(){
-    let data = (event.data).charCodeAt(0)
+function checkKeyFromPhone(e){
+    let data = (e.data).charCodeAt(0)
+    console.log(e)
+
+    const fakeInputx = document.querySelector("#fake-inputx")
+    fakeInputx.value = `${e.data} - ${data}` 
+
     if(!gameOver){
         // comprobar que la tecla presionada sea una letra
         if(data >= 65 && data <= 90 || data >= 97 && data <= 122 || data == 209 || data == 241){
-            letter = (event.data).toUpperCase();
+            letter = (e.data).toUpperCase();
             console.log(letter)
             checkLetter()
         }
     }
 }
 
-function checkKeyfromPC(){
+function checkKeyfromPC(e){
     if(!gameOver){
         // comprobar que no haya perdido y que la tecla presionada sea una letra
-        if(event.keyCode >= 65 && event.keyCode <= 90 || event.keyCode == 192){
-            letter = (event.key).toUpperCase();
+        if(e.keyCode >= 65 && e.keyCode <= 90 || e.keyCode == 192){
+            letter = (e.key).toUpperCase();
             checkLetter()
         }
     }
