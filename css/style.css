@@ -29,7 +29,7 @@ body{
 .flex-col-space{
     display: flex;
     flex-flow: column nowrap;
-    justify-content: space-between;
+    justify-content: space-evenly;
 }
 
 .button{
@@ -71,7 +71,8 @@ body{
 }
 
 .red{
-    background-image: radial-gradient(rgba(200, 50, 50, 0.85), rgba(175, 50, 50, 0.85));
+    /* background-image: radial-gradient(rgba(200, 50, 50, 0.85), rgba(175, 50, 50, 0.85)); */
+    background-image: linear-gradient(to left, transparent, rgba(200, 50, 50, 0.85) 20%,  rgba(200, 50, 50, 0.85) 80%, transparent);
     color: var(--lightblue);
 }
 
@@ -94,7 +95,7 @@ main{
 
 #new-word-section{
     display: none;
-    width: 320px;
+    width: 310px;
     height: 50%;
 }
 
@@ -109,31 +110,33 @@ main{
     position: absolute;
     top: 20vh;
     width: 300px;
-    height: 100px;
-    border-radius: 50%;
-    box-shadow: 0px 0px 20px gray;
+/*     height: 100px; */
+    padding: 20px 0px;
+    border-radius: 5%;
+/*     box-shadow: 0px 0px 20px gray; */
     text-align: center;
     font-size: 20px;
     font-weight: bold;
     display: none;
-    transform: rotate(-15deg);
+    transform: rotate(-10deg);
 }
 
 #secret-word-box{
-    position: absolute;
-    top: -50px;
+    /* position: absolute; */
+    padding: 10px 0px;
     width: 300px;
-    height: 50px;
-    box-shadow: 0px 0px 20px gray;
+/*     box-shadow: 0px 0px 20px gray; */
+    border-radius: 5%;
     text-align: center;
     font-size: 15px;
     display: none;
-    background-color: hsla(216, 87%, 20%, 0.85);
+    background-image: linear-gradient(to left, transparent, grey 20%,  grey 80%, transparent);
     color: var(--lightblue);
 }
 
 #hanged-box{
-    height: 80%
+    height: 70%;
+    margin-bottom: 5%;
 }
 
 
@@ -149,13 +152,12 @@ main{
     flex-flow: row nowrap;
     justify-content: center;
     align-items: center;
-    margin-bottom: 10px;
 }
 
 #wrong-words-box{
     width: 100%;
-    height: 20%;
-    margin: 0px 10px;
+    height: 30%;
+    margin: 10px;
 }
 
 #game-buttons-box{
@@ -173,17 +175,14 @@ main{
     border: none;
     outline: none;
     resize: none;
-/*     background-color: transparent;
-    color: transparent; */
-    background-color: lightsalmon;
+    background-color: transparent;
+    color: transparent;
+    position: absolute;
 }
 
 /* NEW WORD */
 
 #new-word-input{
-    margin: 10px;
-    padding: 12px;
-    height: 100%;
     border: none;
     outline: none;
     resize: none;
@@ -273,15 +272,6 @@ footer li a:visited{
 }
 
 @media (max-height: 700px){   
-/*    footer{
-         height: 80px; 
-        align-self: baseline;
-    } */
-
-/*     footer p{
-        margin-top: 20px;
-    } */
-
     header{
         position: absolute;
         top: 5px;
@@ -295,8 +285,18 @@ footer li a:visited{
     footer{
         height: 17%;
     }
+
+    .button{
+        padding: 8px;
+    }
+
     #open-keyboard{
         display: block;
         font-size: 14px;
+    }
+
+    #hanged-box{
+        height: 50%;
+        margin-bottom: 5%;
     }
 }

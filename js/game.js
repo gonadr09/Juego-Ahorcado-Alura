@@ -56,8 +56,8 @@ function checkKeyFromPhone(e){
     let data = (e.data).charCodeAt(0)
     console.log(e)
 
-    const fakeInputx = document.querySelector("#fake-inputx")
-    fakeInputx.value = `${e.data} - ${data}` 
+/*     const fakeInputx = document.querySelector("#fake-inputx")
+    fakeInputx.value = `${e.data} - ${data}`  */
 
     if(!gameOver){
         // comprobar que la tecla presionada sea una letra
