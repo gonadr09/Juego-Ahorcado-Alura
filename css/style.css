@@ -196,17 +196,12 @@ main{
     background-color: var(--lightblue);
 }
 
-#warning-box{
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: center;
-    align-items: center;
-    font-size: 19px;
-    color: gray;
+.color-green{
+    color: green;
 }
 
-#warning-box img{
-    margin-right: 5px;
+.color-red{
+    color: darkred
 }
 
 /* FOOTER */
@@ -288,7 +283,8 @@ footer li a:active {
 }
 
 .footer-phone{
-    display: none;
+    display: 72px;
+    margin-top: 10px;
 }
 
 @media (max-height: 700px){   
