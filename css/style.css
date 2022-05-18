@@ -233,7 +233,16 @@ footer li{
     color: var(--lightblue);
 }
 
-footer li a:visited{
+footer li a:link {
+    color: var(--lightblue);
+}
+footer li a:visited {
+    color: var(--lightblue);
+}
+footer li a:hover {
+    color: var(--lightblue);
+}
+footer li a:active {
     color: var(--lightblue);
 }
 
