@@ -93,7 +93,7 @@ main{
 
 #new-word-section{
     display: none;
-    width: 310px;
+    width: 250px;
     height: 50%;
 }
 
@@ -289,12 +289,21 @@ footer li a:active {
 }
 
 @media (max-height: 700px){   
+    header{
+        height: 15%;
+    }
+    
     main{
-        height: 75%;
+        height: 70%;
     }
 
     footer{
         height: 15%;
+        font-size: 14px;
+    }
+
+    footer p {
+        width: 225px;
     }
 
     .button{
@@ -308,6 +317,6 @@ footer li a:active {
 
     #hanged-box{
         height: 50%;
-        margin-bottom: 5%;
+        margin: 5%;
     }
 }
