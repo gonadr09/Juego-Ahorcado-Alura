@@ -14,6 +14,7 @@ function addNewWord(){
     const cancelButton = document.querySelector("#new-word-cancel");
 
     confirmNewWord.innerHTML = ""
+    inputText.value = ""
     let tempInput = ""
     let expresion = /[A-Z]/i;
 
@@ -40,6 +41,7 @@ function addNewWord(){
                 confirmNewWord.textContent = `La palabra supera los 20 caracteres permitidos`
                 confirmNewWord.classList.add("color-red")
                 confirmNewWord.classList.remove("color-green")
+                inputText.value = "";
             }
         } 
     })

@@ -8,7 +8,7 @@ const newWordSection = document.querySelector("#new-word-section");
 const gameSection = document.querySelector("#game-section");
 
 function first() {
-    html.style.height = window.innerHeight+"px"
+    /* html.style.height = window.innerHeight+"px" */
     mainMenu()
 }
 
