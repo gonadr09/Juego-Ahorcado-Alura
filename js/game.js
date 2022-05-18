@@ -27,7 +27,8 @@ function createBoardGame(){
     openKeyboard.addEventListener("click", () => fakeInput.focus())
 
     // Tira hacia abajo el footer en pantallas pequeñas (mediaquery en JS)
-    let mdH = window.matchMedia("(max-width: 650px)");
+    let mdH = window.matchMedia("(max-height: 700px)");
+/*     let mdH = window.matchMedia("(max-width: 650px)"); */
     if(mdH.matches){
         header.classList.add("header-phone")
         main.classList.add("main-phone")

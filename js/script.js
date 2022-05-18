@@ -1,3 +1,4 @@
+const html = document.querySelector("html")
 const header = document.querySelector("header");
 const main = document.querySelector("main");
 const footer = document.querySelector("footer");
@@ -7,6 +8,8 @@ const newWordSection = document.querySelector("#new-word-section");
 const gameSection = document.querySelector("#game-section");
 
 function mainMenu(){
+    html.style.height = window.innerHeight+"px"
+
     // visualizaciones
     main.classList.add("flex-col-center")
     main.classList.remove("flex-col-start")
