@@ -1,4 +1,4 @@
-let keyWord, letterLeft, score, gameOver, underscores, lettersUsed, wrongLetters
+let keyWord, letterLeft, score, gameOver, underscores, lettersUsed, wrongLetters, letter, searchBegin, index
 
 const wrongLetterBox = document.querySelector("#wrong-words-box")
 const rightWordsBox = document.querySelector("#right-words-box")
@@ -46,38 +46,58 @@ function createBoardGame(){
     wrongLetters = []
 
     openKeyboard.addEventListener("click", () => fakeInput.focus())
-    
-    window.addEventListener("keydown", checkKeyDown);        
+
+    fakeInput.addEventListener("textInput", checkKeyFromPhone)
+
+    window.addEventListener("keydown", checkKeyfromPC);        
 }
 
-function checkKeyDown(){
-    // comprobar que no haya perdido y que la tecla presionada sea una letra
-    if(!gameOver && event.keyCode >= 65 && event.keyCode <= 90 || event.keyCode == 192){
-        let letter = (event.key).toUpperCase();
-        // comprobar que no se haya usado esa letra
-        if(!lettersUsed.includes(letter)){
-            let searchBegin = 0
-            let index = keyWord.indexOf(letter, searchBegin)
-            // comprobar que la letra esté en la palabra
-            if(index != -1){
-                console.log()
-                lettersUsed.push(letter)
-                while(index != -1){
-                    letterLeft--
-                    underscores[index].textContent = letter
-                    searchBegin = index +1
-                    index = keyWord.indexOf(letter, searchBegin)
-                }
-            }else{
-                console.log()
-                lettersUsed.push(letter)
-                wrongLetters.push(letter)
-                wrongLetterBox.textContent = wrongLetters.join(' ')
-                score++
-                drawHanged()
-            }
-            hasWon()
+function checkKeyFromPhone(){
+    let data = (event.data).charCodeAt(0)
+    if(!gameOver){
+        // comprobar que la tecla presionada sea una letra
+        if(data >= 65 && data <= 90 || data >= 97 && data <= 122 || data == 209 || data == 241){
+            letter = (event.data).toUpperCase();
+            console.log(letter)
+            checkLetter()
         }
+    }
+}
+
+function checkKeyfromPC(){
+    if(!gameOver){
+        // comprobar que no haya perdido y que la tecla presionada sea una letra
+        if(event.keyCode >= 65 && event.keyCode <= 90 || event.keyCode == 192){
+            letter = (event.key).toUpperCase();
+            checkLetter()
+        }
+    }
+}
+
+function checkLetter(){
+    // comprobar que no se haya usado esa letra
+    if(!lettersUsed.includes(letter)){
+        searchBegin = 0
+        index = keyWord.indexOf(letter, searchBegin)
+        // comprobar que la letra esté en la palabra
+        if(index != -1){
+            console.log()
+            lettersUsed.push(letter)
+            while(index != -1){
+                letterLeft--
+                underscores[index].textContent = letter
+                searchBegin = index +1
+                index = keyWord.indexOf(letter, searchBegin)
+            }
+        }else{
+            console.log()
+            lettersUsed.push(letter)
+            wrongLetters.push(letter)
+            wrongLetterBox.textContent = wrongLetters.join(' ')
+            score++
+            drawHanged()
+        }
+        hasWon()
     }
 }
 
