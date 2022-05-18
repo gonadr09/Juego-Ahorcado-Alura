@@ -9,11 +9,11 @@ const desistButton = document.querySelector("#desist")
 const finalMsg = document.querySelector("#final-msg-box")
 const secretWordBox = document.querySelector("#secret-word-box")
 
-const openKeyboard = document.querySelector("#open-keyboard")
-const fakeInput = document.querySelector("#fake-input")
-
+const openKeyboard = document.querySelector("#open-keyboard") // aplica un focus a un input oculto para abrir el teclado del celular
+const fakeInput = document.querySelector("#fake-input") // input oculto para poder jugar con el celular también
 
 function createBoardGame(){
+    // visualizaciones
     main.classList.add("flex-col-start")
     main.classList.remove("flex-col-center")
     
@@ -21,43 +21,51 @@ function createBoardGame(){
     gameSection.style.display = "flex";
     newWordSection.style.display = "none";
 
-    rightWordsBox.innerHTML = ""
-    wrongLetterBox.innerHTML = ""
-
+    // escuchadores de los botones
     newGameButton.addEventListener("click", createBoardGame)
     desistButton.addEventListener("click", mainMenu)
+    openKeyboard.addEventListener("click", () => fakeInput.focus())
 
+    // Tira hacia abajo el footer en pantallas pequeñas (mediaquery en JS)
+    let mdH = window.matchMedia("(max-height: 700px)");
+    if(mdH.matches){
+        header.classList.add("header-phone")
+        main.classList.add("main-phone")
+        footer.classList.add("footer-phone")
+    } else {
+        header.classList.remove("header-phone")
+        main.classList.remove("main-phone")
+        footer.classList.remove("footer-phone")
+    }
+
+    // Elige palabra y reinicia valores
     keyWord = chooseRandomWord();
     letterLeft = keyWord.length
     score = 0
     gameOver = false
-
-    drawHanged()
+    lettersUsed = []
+    wrongLetters = []
+    rightWordsBox.innerHTML = ""
+    wrongLetterBox.innerHTML = ""
     finalMsg.style.display = "none"
     secretWordBox.style.display = "none"
+
+    drawHanged()
+    drawUnderscores()
+
+    underscores = document.querySelectorAll(".underscore")
 
     console.log("board game created");
     console.log(keyWord)
 
-    drawUnderscores()
-    underscores = document.querySelectorAll(".underscore")
-
-    lettersUsed = []
-    wrongLetters = []
-
-    openKeyboard.addEventListener("click", () => fakeInput.focus())
-
-    fakeInput.addEventListener("input", checkKeyFromPhone)
-
-    window.addEventListener("keydown", checkKeyfromPC);        
+    // escuchadores de teclas
+    fakeInput.addEventListener("input", checkKeyFromPhone) // fake input para abrir teclado y jugar con el celular
+    window.addEventListener("keydown", checkKeyfromPC); // para jugar con PC
 }
 
 function checkKeyFromPhone(e){
     let data = (e.data).charCodeAt(0)
     console.log(e)
-
-/*     const fakeInputx = document.querySelector("#fake-inputx")
-    fakeInputx.value = `${e.data} - ${data}`  */
 
     if(!gameOver){
         // comprobar que la tecla presionada sea una letra
@@ -67,7 +75,7 @@ function checkKeyFromPhone(e){
             checkLetter()
         }
     }
-    fakeInput.value = ""
+    fakeInput.value = "" // vacía el fake input cada vez que se escribe 
 }
 
 function checkKeyfromPC(e){
