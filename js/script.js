@@ -7,9 +7,12 @@ const beginSection = document.querySelector("#begin-section");
 const newWordSection = document.querySelector("#new-word-section");
 const gameSection = document.querySelector("#game-section");
 
-function mainMenu(){
+function first() {
     html.style.height = window.innerHeight+"px"
+    mainMenu()
+}
 
+function mainMenu(){
     // visualizaciones
     main.classList.add("flex-col-center")
     main.classList.remove("flex-col-start")
@@ -30,4 +33,4 @@ function mainMenu(){
     buttonAddWord.addEventListener("click", addNewWord);
 }
 
-window.addEventListener("load", mainMenu)
+window.addEventListener("load", first)
