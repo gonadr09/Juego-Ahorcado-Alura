@@ -67,6 +67,7 @@ function checkKeyFromPhone(e){
             checkLetter()
         }
     }
+    fakeInput.value = ""
 }
 
 function checkKeyfromPC(e){
