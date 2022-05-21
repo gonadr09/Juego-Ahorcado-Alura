@@ -17,7 +17,6 @@ let wordsList = [
     "DEFINICION",
     "DEPURADOR",
     "DIAGRAMA",
-    "ENCAPSULAMIENTO",
     "EXCEPCION",
     "EXPRESION",
     "DISEÑO",

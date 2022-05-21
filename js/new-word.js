@@ -39,14 +39,14 @@ saveButton.addEventListener("click", () => {
     confirmNewWord.classList.remove("color-green")
     setTimeout(() => {
         if(inputText.value != ""){
-            if(inputText.value.length <= 15){
+            if(inputText.value.length <= 14){
                 wordsList.push((inputText.value).toUpperCase())
                 confirmNewWord.textContent = `Agregaste correctamente la palabra: ${(inputText.value).toUpperCase()}`
                 confirmNewWord.classList.remove("color-red")
                 confirmNewWord.classList.add("color-green")
                 inputText.value = "";
             } else {
-                confirmNewWord.textContent = `La palabra supera los 15 caracteres permitidos`
+                confirmNewWord.textContent = `La palabra supera los 14 caracteres permitidos`
                 confirmNewWord.classList.add("color-red")
                 confirmNewWord.classList.remove("color-green")
                 inputText.value = "";
@@ -54,14 +54,3 @@ saveButton.addEventListener("click", () => {
         }
     }, 1);
 })
-
-/*     setTimeout(() => {
-        confirmNewWord.classList.add("bye")
-        setTimeout(() => {
-            confirmNewWord.classList.remove("bye")
-            confirmNewWord.classList.remove("color-red")
-            confirmNewWord.classList.remove("color-green")
-            confirmNewWord.innerHTML = ""
-        }, 3000);
-    }, 3000); */
-

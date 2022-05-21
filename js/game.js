@@ -197,8 +197,7 @@ function drawHanged(score){
             break;
         case 1:
             // CABEZA
-            ctx.moveTo(255, 50);
-            ctx.arc(255, 80, 30, -Math.PI / 2, Math.PI * 3 / 2, true);
+            ctx.arc(255, 80, 30,2*Math.PI,0)
             break;
         case 2:
             // TORSO
@@ -248,7 +247,7 @@ function gameOverMsg(won){
     if(won){
         finalMsg.classList.remove("red")
         finalMsg.classList.add("green")
-        finalMsg.textContent = ` ¡ GANASTE ! ` //⭐✨🌟💫🏮🎎🎉🎊🎈🎀 ❌✅❗❕😁😄😄
+        finalMsg.textContent = `¡ GANASTE !` //⭐✨🌟💫🏮🎎🎉🎊🎈🎀 ❌✅❗❕😁😄😄
     } else {
         finalMsg.classList.remove("green")
         finalMsg.classList.add("red")
