@@ -307,7 +307,7 @@ main{
         3px 3px 0 var(--border),
         3px -3px 0 var(--border),
         -3px -3px 0 var(--border),
-        0 0 20px grey
+        0 0 20px grey;
 }
 
 .green{
