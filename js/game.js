@@ -174,7 +174,7 @@ function drawUnderscores(){
 
 function drawHanged(score){
     ctx.beginPath();
-    ctx.lineWidth = 5
+    ctx.lineWidth = 6
     const root = document.querySelector(':root');
     const rootStyle = getComputedStyle(root);
     true? ctx.strokeStyle = rootStyle.getPropertyValue('--darkblue'): ctx.strokeStyle = rootStyle.getPropertyValue('--lightblue');
