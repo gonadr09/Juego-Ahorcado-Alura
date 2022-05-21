@@ -6,7 +6,6 @@ html[data-theme='light'] {
     --background-image-grey:radial-gradient(circle at center, lightgrey, grey);
     --grey: grey;
     --border: rgb(7, 45, 100);
-/*     --border:rgba(50, 200, 75, 0.85); */
 --border: rgb(255, 255, 255);
 }
 
@@ -31,9 +30,6 @@ body{
     font-family: 'Boogaloo', cursive;
     letter-spacing: 0.5px;
     position: relative;
-/*     display: flex;
-    flex-flow: column nowrap;
-    align-items: center */;
 }
 
 /* DARK THEME*/
@@ -160,7 +156,6 @@ body{
 }
 
 .blue{
-    /* background-color: var(--darkblue); */
     background-image: var(--background-image-contrast);
     color: var(--lightblue);
     border: 1px solid var(--lightblue);
@@ -359,11 +354,6 @@ main{
     position: relative;
 }
 
-/* #hanged-box{
-    width: 100%;
-    height: 100%;
-} */
-
 #hanged-box canvas{
     width: 100%;
     height: 100%;
@@ -413,6 +403,11 @@ main{
     background: transparent;
 }
 
+#warning p{
+    color: var(--darkblue);
+    margin-left: 10px;
+}
+
 #confirm-new-word{
     position: absolute;
     text-align: center;
@@ -422,7 +417,6 @@ main{
 }
 
 .color-green{
-    /* color: green; */
     width: 250px;
     top: -52px;
     padding: 10px;
@@ -433,7 +427,6 @@ main{
 }
 
 .color-red{
-    /* color: darkred; */
     width: 250px;
     top: -52px;
     padding: 10px;
@@ -502,8 +495,6 @@ footer li a:active {
 }
 
 .footer-phone{
-/*     height: 15%;
-    margin-top: 15px; */
     display: none;
 }
 

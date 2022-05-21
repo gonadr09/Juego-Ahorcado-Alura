@@ -1,3 +1,8 @@
+<!--
+     animar ultimo msg
+    agregar advertencia
+-->
+
 <!DOCTYPE html>
 <html data-theme="light" lang="en">
 <head>
@@ -63,7 +68,12 @@
 
         <section id="new-word-section" class="flex-col-space">
             <input id="new-word-input" type="text" placeholder="Escribe una palabra ..." autocomplete="off">
+
             <div id="new-word-buttons-box">
+                <div id="warning" class="flex-row-center">
+                    <!-- <img src="img/exclamation-circle.svg" alt="advertencia"> -->
+                    <p>🚫 Máximo 14 caracteres</p>
+                </div>
                 <div id="confirm-new-word"></div>
                 <button id="new-word-save" class="button blue">Guardar &nbsp;📝</button>
                 <button id="new-word-cancel" class="button grey">Empezar a jugar &nbsp;🕹️</button>

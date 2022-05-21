@@ -174,11 +174,15 @@ function drawUnderscores(){
 
 function drawHanged(score){
     ctx.beginPath();
+    ctx.lineWidth = 5
+    const root = document.querySelector(':root');
+    const rootStyle = getComputedStyle(root);
+    true? ctx.strokeStyle = rootStyle.getPropertyValue('--darkblue'): ctx.strokeStyle = rootStyle.getPropertyValue('--lightblue');
     switch(score) {
         case 0:
             // BASE
-            ctx.moveTo(355, 350);
-            ctx.lineTo(0, 350);
+            ctx.moveTo(25, 350);
+            ctx.lineTo(325, 350);
             // COL
             ctx.moveTo(105, 0);
             ctx.lineTo(105, 350);
@@ -225,10 +229,6 @@ function drawHanged(score){
             ctx.lineTo(255, 120);
             break;
     }
-    ctx.lineWidth = 6
-    const root = document.querySelector(':root');
-    const rootStyle = getComputedStyle(root);
-    true? ctx.strokeStyle = rootStyle.getPropertyValue('--darkblue'): ctx.strokeStyle = rootStyle.getPropertyValue('--lightblue');
     ctx.stroke()
 }
 
