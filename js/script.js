@@ -7,9 +7,13 @@ const beginSection = document.querySelector("#begin-section");
 const newWordSection = document.querySelector("#new-word-section");
 const gameSection = document.querySelector("#game-section");
 
+const screen = document.querySelector("#screen")
+
 function first() {
-    /* html.style.height = window.innerHeight+"px" */
     mainMenu()
+    setTimeout(() => {
+        screen.classList.remove("screen-one")
+    }, 1000);
 }
 
 function mainMenu(){
@@ -28,9 +32,19 @@ function mainMenu(){
     // Botones del menú principal
     const buttonPlayGame = document.querySelector("#play-game");
     const buttonAddWord = document.querySelector("#add-new-word");
-    
-    buttonPlayGame.addEventListener("click", createBoardGame);
-    buttonAddWord.addEventListener("click", addNewWord);
+
+    buttonPlayGame.addEventListener("click", () => {animation(createBoardGame)});
+    buttonAddWord.addEventListener("click", () => {animation(addNewWord)});
+}
+
+function animation(varFunction){
+    screen.classList.add("screen-in")
+    setTimeout(() => {
+        varFunction()
+    }, 500);
+    setTimeout(() => {
+        screen.classList.remove("screen-in")
+    }, 1000);
 }
 
 window.addEventListener("load", first)

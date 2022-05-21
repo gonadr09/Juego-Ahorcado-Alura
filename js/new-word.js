@@ -1,3 +1,9 @@
+// funcionamiento input y botones de pantalla add new Word
+const inputText = document.querySelector("#new-word-input");
+const confirmNewWord = document.querySelector("#confirm-new-word")
+const saveButton = document.querySelector("#new-word-save");
+const cancelButton = document.querySelector("#new-word-cancel");
+
 function addNewWord(){
     // visualizaciones
     beginSection.style.display = "none";
@@ -7,13 +13,9 @@ function addNewWord(){
     main.classList.remove("flex-col-start")
     main.classList.add("flex-col-center")
 
-    // funcionamiento input y botones de pantalla add new Word
-    const inputText = document.querySelector("#new-word-input");
-    const confirmNewWord = document.querySelector("#confirm-new-word")
-    const saveButton = document.querySelector("#new-word-save");
-    const cancelButton = document.querySelector("#new-word-cancel");
-
     confirmNewWord.innerHTML = ""
+    confirmNewWord.classList.remove("color-red")
+    confirmNewWord.classList.remove("color-green")
     inputText.value = ""
     let tempInput = ""
     let expresion = /[A-Z]/i;
@@ -27,22 +29,39 @@ function addNewWord(){
             inputText.value = tempInput
         }
     })
+}
 
-    cancelButton.addEventListener("click", createBoardGame)
-    saveButton.addEventListener("click", () => {        
+cancelButton.addEventListener("click", () => {animation(createBoardGame)});
+
+saveButton.addEventListener("click", () => {    
+    confirmNewWord.textContent = ""
+    confirmNewWord.classList.remove("color-red")
+    confirmNewWord.classList.remove("color-green")
+    setTimeout(() => {
         if(inputText.value != ""){
-            if(inputText.value.length <= 20){
+            if(inputText.value.length <= 15){
                 wordsList.push((inputText.value).toUpperCase())
-                confirmNewWord.textContent = `Agregaste la palabra: ${(inputText.value).toUpperCase()}`
+                confirmNewWord.textContent = `Agregaste correctamente la palabra: ${(inputText.value).toUpperCase()}`
                 confirmNewWord.classList.remove("color-red")
                 confirmNewWord.classList.add("color-green")
                 inputText.value = "";
             } else {
-                confirmNewWord.textContent = `La palabra supera los 20 caracteres permitidos`
+                confirmNewWord.textContent = `La palabra supera los 15 caracteres permitidos`
                 confirmNewWord.classList.add("color-red")
                 confirmNewWord.classList.remove("color-green")
                 inputText.value = "";
             }
-        } 
-    })
-}
+        }
+    }, 1);
+})
+
+/*     setTimeout(() => {
+        confirmNewWord.classList.add("bye")
+        setTimeout(() => {
+            confirmNewWord.classList.remove("bye")
+            confirmNewWord.classList.remove("color-red")
+            confirmNewWord.classList.remove("color-green")
+            confirmNewWord.innerHTML = ""
+        }, 3000);
+    }, 3000); */
+
