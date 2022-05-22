@@ -1,3 +1,5 @@
+![AHORCADO](https://raw.githubusercontent.com/gonadr09/Juego-Ahorcado-Alura/master/img/logo-ahorcado-dl-1500.png)
+
 # 🕹️ Juego Ahorcado
 Juego Ahorcado para Challange nº2 de Alura Latam - Oracle ONE
 
