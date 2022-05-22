@@ -5,9 +5,7 @@ Juego Ahorcado para Challange nº2 de Alura Latam - Oracle ONE
 
 -----
 ## 💻 Lenguajes
-![HTML](https://img.shields.io/badge/HTML-5A5A5A?logo=html5)
-![CSS](https://img.shields.io/badge/CSS-5A5A5A?logo=css3&logoColor=01A3D8)
-![JS](https://img.shields.io/badge/JavaScript-5A5A5A?logo=javascript&logoColor=yelllow)
+![HtmlCssJs](https://raw.githubusercontent.com/gonadr09/Juego-Ahorcado-Alura/master/img/954554.png)
 
 -----
 ## 💡 Descripción
